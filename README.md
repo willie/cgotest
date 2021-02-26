@@ -1,3 +1,5 @@
+I [got an answer that resolved my problem](https://github.com/golang/go/issues/44648#issuecomment-786892407). The fixed version is in this branch.
+
 # Something changed with CGO and c-archives in Go 1.15
 
 Years ago, [I decided to statically compile the Go HTTP client so I could use it from C/C++.](https://twitter.com/willie/status/880184435639017473). And since then, it’s become the best way for me to move some complex legacy C++ code forward while taking advantage of new libraries that are more mature in the Go ecosystem.
