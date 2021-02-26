@@ -23,14 +23,14 @@ func (h *HTTPFnWriter) Write(p []byte) (n int, err error) {
 }
 
 //export HTTPGet
-func HTTPGet(url *C.char, writeFunc C.writeFunc, writeFuncData unsafe.Pointer) (read int64) {
+func HTTPGet(url *C.char, writeFn C.writeFunc, writeFuncData unsafe.Pointer) (read int64) {
 	req, _ := http.NewRequest("GET", C.GoString(url), nil)
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return
 	}
 
-	dest := &HTTPFnWriter{Fn: writeFunc, FnData: writeFuncData}
+	dest := &HTTPFnWriter{Fn: writeFn, FnData: writeFuncData}
 	read, _ = io.Copy(dest, resp.Body)
 
 	resp.Body.Close()
