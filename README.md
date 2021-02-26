@@ -1,4 +1,4 @@
-# This is a sample Go archive to demonstrate a breaking change in Go 1.15
+# This demonstrates a breaking change in Go 1.15
 
 Years ago, [I decided to statically compile the Go HTTP client so I could use it from C/C++.](https://twitter.com/bradfitz/status/880536642007711744). And since then, it’s become the best way for me to move some complex legacy C++ code forward while taking advantage of new libraries that are more mature in the Go ecosystem.
 
